@@ -5,6 +5,8 @@ import 'package:pretest/views/center1.dart';
 import 'package:pretest/views/center2.dart';
 import 'package:pretest/views/center3.dart';
 import 'package:pretest/views/column.dart';
+import 'package:pretest/views/columnMAS1.dart';
+import 'package:pretest/views/columnMAS2.dart';
 import 'package:pretest/views/columncc.dart';
 import 'package:pretest/views/columnce.dart';
 import 'package:pretest/views/columncs.dart';
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
           "/columncc-page": (BuildContext context) => const Columncc_page(),
           "/columnce-page": (BuildContext context) => const Columnce_page(),
           "/columncst-page": (BuildContext context) => const Columncst_page(),
+          "/columnmax-page": (BuildContext context) => const ColumnMAS1_page(),
+          "/columnmin-page": (BuildContext context) => const ColumnMAS2_page(),
           "/stateful-page": (BuildContext context) => const Stateful_page(),
           "/stateless-page": (BuildContext context) => const Stateless_page(),
         });

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pretest/views/columnMAS1.dart';
+import 'package:pretest/views/columnMAS2.dart';
 import 'package:pretest/views/columncc.dart';
 import 'package:pretest/views/columnce.dart';
 import 'package:pretest/views/columncs.dart';
@@ -144,6 +146,29 @@ class Column_page extends StatelessWidget {
                   },
                   child: const Text('CrossAxisAlignment.stretch'),
                 ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ColumnMAS1_page()),
+                    );
+                  },
+                  child: const Text('MainAxisSize.max'),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ColumnMAS2_page()),
+                    );
+                  },
+                  child: const Text('MainAxisSize.min'),
+                ),
+                const SizedBox(height: 10),
               ],
             ),
           ],
