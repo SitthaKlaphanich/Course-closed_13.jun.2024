@@ -16,7 +16,7 @@ class Columnce_page extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Icon(Icons.book, size: 48),
-            Icon(Icons.book, size: 48),
+            Icon(Icons.book, size: 144),
             Icon(Icons.book, size: 48),
           ],
         ),
