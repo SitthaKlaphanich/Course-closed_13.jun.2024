@@ -1,1 +1,3 @@
-# ปิดคอร์ส ฝึกงาน 13 มิถุนายน 2567
+# flutter_application_2
+
+A new Flutter project.
