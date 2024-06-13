@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,11 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => HomePage(),
+        '/': (context) => const HomePage(),
         '/container': (context) => const ContainerPage(),
-        '/padding': (context) => PaddingPage(),
-        '/tranform': (context) => TranformPage(),
-        '/sizedbox': (context) => SizedBoxPage(),
+        '/padding': (context) => const PaddingPage(),
+        '/tranform': (context) => const TranformPage(),
+        '/sizedbox': (context) => const SizedBoxPage(),
       },
       initialRoute: '/',
     );
@@ -25,58 +27,100 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: const Text('Home Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/container');
-                },
-                child: Text('ContainerPage'),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 150,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/container');
+                    },
+                    child: const Text(
+                      'ContainerPage',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/transform');
+                    },
+                    child: const Text(
+                      'TransformPage',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 10), 
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/tranform');
-                },
-                child: Text('TranformPage'),
-              ),
-            ),
-            SizedBox(height: 10), 
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/padding');
-                },
-                child: Text('PaddingPage'),
-              ),
-            ),
-            SizedBox(height: 10),
-            SizedBox(
-              width: 200,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/sizedbox');
-                },
-                child: Text('SizedboxPage'),
-              ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 150,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/padding');
+                    },
+                    child: const Text(
+                      'PaddingPage',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 150,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/sizedbox');
+                    },
+                    child: const Text(
+                      'SizedBoxPage',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -92,28 +136,36 @@ class ContainerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Container Page'),
+        title: const Text('Container Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              child: Text(
-                'Container Kub',
-                style: TextStyle(fontSize: 20),
-              ),
               alignment: Alignment.center,
               margin: const EdgeInsets.all(10.0),
               color: Colors.lightBlue,
               width: 160.0,
               height: 160.0,
+              child: const Text(
+                'Container Kub',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back to Home Page'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'Home Page',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),
@@ -123,11 +175,13 @@ class ContainerPage extends StatelessWidget {
 }
 
 class PaddingPage extends StatelessWidget {
+  const PaddingPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Padding Page'),
+        title: const Text('Padding Page'),
       ),
       body: Center(
         child: Column(
@@ -159,7 +213,15 @@ class PaddingPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back to Home Page'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'Home Page',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),
@@ -169,11 +231,13 @@ class PaddingPage extends StatelessWidget {
 }
 
 class TranformPage extends StatelessWidget {
+  const TranformPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tranform Page'),
+        title: const Text('Tranform Page'),
       ),
       body: Center(
         child: Column(
@@ -187,14 +251,22 @@ class TranformPage extends StatelessWidget {
                 width: 180.0,
                 height: 180.0,
                 color: Colors.blue,
-                child: Center(child: Text('Container kub')),
+                child: const Center(child: Text('Container kub')),
               ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back to Home Page'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'Home Page',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),
@@ -204,11 +276,13 @@ class TranformPage extends StatelessWidget {
 }
 
 class SizedBoxPage extends StatelessWidget {
+  const SizedBoxPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SizedBox Page'),
+        title: const Text('SizedBox Page'),
       ),
       body: Center(
         child: Column(
@@ -234,7 +308,15 @@ class SizedBoxPage extends StatelessWidget {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Back to Home Page'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'Home Page',
+                style: TextStyle(color: Colors.black),
+              ),
             ),
           ],
         ),
