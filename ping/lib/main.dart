@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/container': (context) => const ContainerPage(),
         '/padding': (context) => const PaddingPage(),
-        '/tranform': (context) => const TranformPage(),
+        '/transform': (context) => const TranformPage(),
         '/sizedbox': (context) => const SizedBoxPage(),
       },
       initialRoute: '/',
