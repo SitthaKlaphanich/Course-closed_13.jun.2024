@@ -173,7 +173,50 @@ class ContainerPage extends StatelessWidget {
     );
   }
 }
+class TranformPage extends StatelessWidget {
+  const TranformPage({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Tranform Page'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Transform(
+              transform: Matrix4.translationValues(-50.0, -70.0, 0.0)
+                ..rotateZ(0.785398),
+              alignment: Alignment.center,
+              child: Container(
+                width: 180.0,
+                height: 180.0,
+                color: Colors.blue,
+                child: const Center(child: Text('Container kub')),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text(
+                'Home Page',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 class PaddingPage extends StatelessWidget {
   const PaddingPage({super.key});
 
@@ -230,50 +273,7 @@ class PaddingPage extends StatelessWidget {
   }
 }
 
-class TranformPage extends StatelessWidget {
-  const TranformPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tranform Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Transform(
-              transform: Matrix4.translationValues(-50.0, -70.0, 0.0)
-                ..rotateZ(0.785398),
-              alignment: Alignment.center,
-              child: Container(
-                width: 180.0,
-                height: 180.0,
-                color: Colors.blue,
-                child: const Center(child: Text('Container kub')),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              child: const Text(
-                'Home Page',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class SizedBoxPage extends StatelessWidget {
   const SizedBoxPage({super.key});
